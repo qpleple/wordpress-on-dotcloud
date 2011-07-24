@@ -9,17 +9,6 @@
 # file that was distributed with this source code.
 
 
-# This script should be in the wordpress directory
-# The wordpress directory should be named 'wordpress' 
-
-#   ROOT_DIR/
-#       dotcloud-scripts/
-#           feed-wp-config.php
-#           persist-wp-content.sh
-#       wordpress/
-#           postinstall
-#           ...
-
 # Reads environment.json and config MySQL values in wp-config.php
 ./dotcloud-scripts/feed-wp-config.php
 
