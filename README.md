@@ -1,7 +1,7 @@
 Deploying Wordpress on Dotcloud
 ===============================
 
-The fastest way ever to deploy a Wordpress blog.
+The fastest way ever to deploy a Wordpress blog from localhost.
 
     curl -L https://github.com/qpleple/dotcloud-wordpress-deployment/tarball/master | tar xz
     cd qpleple-dotcloud-wordpress-deployment-*
