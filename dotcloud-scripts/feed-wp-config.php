@@ -33,7 +33,7 @@ if (empty($environment)) {
     die("Error: Content of environment.json is not valid json.\n");
 }
 
-$properties = array("DOTCLOUD_DB_MYSQL_LOGIN", "DOTCLOUD_DB_MYSQL_PASSWORD", "DOTCLOUD_DB_MYSQL_USER", "DOTCLOUD_DB_MYSQL_PORT\n");
+$properties = array("DOTCLOUD_DB_MYSQL_LOGIN", "DOTCLOUD_DB_MYSQL_PASSWORD", "DOTCLOUD_DB_MYSQL_LOGIN", "DOTCLOUD_DB_MYSQL_PORT\n");
 foreach ($properties as $property) {
     if (!property_exists($environment, $property)) {
         die("Error: Missing property $property in file environment.json\n");
