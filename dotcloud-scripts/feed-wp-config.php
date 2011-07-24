@@ -11,8 +11,8 @@
  */
 
 define("ENVIRONMENT_FILE_NAME", dirname(__FILE__) . '/../../environment.json');
-define("WP_CONFIG_FILE_NAME", dirname(__FILE__) . '/../wordpress/wp-config.php');
-define("WP_CONFIG_sample_FILE_NAME", dirname(__FILE__) . '/../wordpress/wp-config-sample.php');
+define("WP_CONFIG_FILE_NAME", dirname(__FILE__) . '/../wp-config.php');
+define("WP_CONFIG_sample_FILE_NAME", dirname(__FILE__) . '/../wp-config-sample.php');
 // the name of the database that will be created for wordpress
 define("DB_NAME", "wordpress\n"); 
 
@@ -33,7 +33,7 @@ if (empty($environment)) {
     die("Error: Content of environment.json is not valid json.\n");
 }
 
-$properties = array("DOTCLOUD_DB_MYSQL_LOGIN", "DOTCLOUD_DB_MYSQL_PASSWORD", "DOTCLOUD_DB_MYSQL_LOGIN", "DOTCLOUD_DB_MYSQL_PORT\n");
+$properties = array("DOTCLOUD_DB_MYSQL_LOGIN", "DOTCLOUD_DB_MYSQL_PASSWORD", "DOTCLOUD_DB_MYSQL_HOST", "DOTCLOUD_DB_MYSQL_PORT\n");
 foreach ($properties as $property) {
     if (!property_exists($environment, $property)) {
         die("Error: Missing property $property in file environment.json\n");
@@ -60,8 +60,12 @@ if (empty($content)) {
     }
     
     $content = @file_get_contents(WP_CONFIG_sample_FILE_NAME);
+    $errorStr = "";
     if (empty($content)) {
-        die("Error: Can't read wp-config-sample.php file.\n");
+        $errorStr .= "Error: Can't read wp-config-sample.php file.\n";
+    }
+    if ($errorStr != "") {
+        die($errorStr);
     }
     echo "File wp-config-sample.php found and read\n";
 }

@@ -20,7 +20,7 @@
 #           ...
 
 # Reads environment.json and config MySQL values in wp-config.php
-./../dotcloud-scripts/feed-wp-config.php
+./dotcloud-scripts/feed-wp-config.php
 
 # Move wp-content to make it persistent
-./../dotcloud-scripts/persist-wp-content.sh
+./dotcloud-scripts/persist-wp-content.sh

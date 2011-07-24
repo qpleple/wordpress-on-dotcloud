@@ -1,5 +1,4 @@
 www:
     type: php
-    approot: wordpress
 db:
     type: mysql
