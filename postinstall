@@ -8,7 +8,7 @@
 # file that was distributed with this source code.
 
 # Reads environment.json and config MySQL values in wp-config.php
-./dotcloud-scripts/feed-wp-config.sh
+./dotcloud-scripts/feed-wp-config.php
 
 # Move wp-content to make it persistent
-./dotcloud-scripts/persist-wp-content.php
+./dotcloud-scripts/persist-wp-content.sh
