@@ -2,7 +2,7 @@
 <?php
 
 /*
- * This file is part of the Dotcloud Wordpress Deployment package.
+ * This file is part of the Wordpress On Dotcloud package.
  *
  * (c) Quentin Pleplé <quentin.pleple@gmail.com>
  *

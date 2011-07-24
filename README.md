@@ -1,4 +1,4 @@
-Deploying Wordpress on dotcloud
+Deploying Wordpress on Dotcloud
 ===============================
 
 The fastest way ever to deploy a Wordpress blog.
