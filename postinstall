@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 # This file is part of the Dotcloud Wordpress Deployment package.
 # 
