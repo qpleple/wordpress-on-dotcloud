@@ -93,3 +93,21 @@ $handler = fopen(WP_CONFIG_FILE_NAME, 'w') or die("Error: can't open file wp-con
 fwrite($handler, $content);
 fclose($handler);
 echo "Modifications saved.\n";
+
+
+/**********************************
+  Creating DB if not exists
+ **********************************/
+echo "Creating database " . DB_NAME . "if not exists\n";
+$mysqli = new mysqli(
+    $environment->DOTCLOUD_DB_MYSQL_HOST,
+    $environment->DOTCLOUD_DB_MYSQL_USER,
+    $environment->DOTCLOUD_DB_MYSQL_PASSWORD,
+    "",
+    $environment->DOTCLOUD_DB_MYSQL_PORT
+);
+
+$mysqli->query('CREATE DATABASE IF NOT EXISTS ' . DB_NAME . ';') or die("Error while creating database " . DB_NAME);
+
+echo "Database created\n";
+echo "Ready to blog!\n";
