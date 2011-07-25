@@ -13,7 +13,7 @@ Due to a Dotcloud issue, you may have to push twice the first time : ``dotcloud 
 
     dotcloud push myblog
     
-Note that remote ``wp-content/`` will not be overwrited. so uploaded static files will be kept and local plugins and themes will not be pushed remotely.
+Note that remote ``wp-content/`` will not be overwritten. so uploaded static files will be kept and local plugins and themes will not be pushed remotely.
 
 Under the hood
 ==============
