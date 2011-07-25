@@ -14,7 +14,7 @@ define("ENVIRONMENT_FILE_NAME", dirname(__FILE__) . '/../../environment.json');
 define("WP_CONFIG_FILE_NAME", dirname(__FILE__) . '/../wp-config.php');
 define("WP_CONFIG_sample_FILE_NAME", dirname(__FILE__) . '/../wp-config-sample.php');
 // the name of the database that will be created for wordpress
-define("DB_NAME", "wordpress\n"); 
+define("DB_NAME", "wordpress"); 
 
 /**********************************
   Reading environment variables
