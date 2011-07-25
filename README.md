@@ -1,7 +1,7 @@
 Deploying Wordpress on Dotcloud
 ===============================
 
-The fastest way ever to deploy a Wordpress blog from localhost. Copy all the files of this package in the root of your Wordpress directory and push to Dotcloud:
+Copy all the files of this package in the root of your Wordpress directory and push to Dotcloud:
 
     cd wordpress
     git clone https://github.com/qpleple/wordpress-on-dotcloud
