@@ -6,12 +6,12 @@ Copy all the files of this package in the root of your Wordpress directory and p
     cd wordpress
     git clone https://github.com/qpleple/wordpress-on-dotcloud
     mv wordpress-on-dotcloud/* .
-    dotcloud create MYBLOG
-    dotcloud push MYBLOG
+    dotcloud create myblog
+    dotcloud push myblog
 
-Due to a Dotcloud issue, you may have to push twice the first time : ``dotcloud push MYBLOG``. Push local modifications to remote server with :
+Due to a Dotcloud issue, you may have to push twice the first time : ``dotcloud push myblog``. Push local modifications to remote server with :
 
-    dotcloud push MYBLOG
+    dotcloud push myblog
     
 Note that remote ``wp-content/`` will not be overwrited. so uploaded static files will be kept and local plugins and themes will not be pushed remotely.
 
