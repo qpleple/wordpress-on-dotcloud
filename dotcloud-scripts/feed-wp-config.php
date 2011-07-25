@@ -33,11 +33,15 @@ if (empty($environment)) {
     die("Error: Content of environment.json is not valid json.\n");
 }
 
-$properties = array("DOTCLOUD_DB_MYSQL_LOGIN", "DOTCLOUD_DB_MYSQL_PASSWORD", "DOTCLOUD_DB_MYSQL_HOST", "DOTCLOUD_DB_MYSQL_PORT\n");
+$properties = array("DOTCLOUD_DB_MYSQL_LOGIN", "DOTCLOUD_DB_MYSQL_PASSWORD", "DOTCLOUD_DB_MYSQL_HOST", "DOTCLOUD_DB_MYSQL_PORT");
+$errorStr = "";
 foreach ($properties as $property) {
     if (!property_exists($environment, $property)) {
-        die("Error: Missing property $property in file environment.json\n");
+        $errorStr .= "Error: Missing property $property in file environment.json\n";
     }
+}
+if ($errorStr != "") {
+    die($errorStr);
 }
 echo "File environment.json parsed\n";
 
@@ -60,12 +64,8 @@ if (empty($content)) {
     }
     
     $content = @file_get_contents(WP_CONFIG_sample_FILE_NAME);
-    $errorStr = "";
     if (empty($content)) {
-        $errorStr .= "Error: Can't read wp-config-sample.php file.\n";
-    }
-    if ($errorStr != "") {
-        die($errorStr);
+        die("Error: Can't read wp-config-sample.php file.\n");
     }
     echo "File wp-config-sample.php found and read\n";
 }
