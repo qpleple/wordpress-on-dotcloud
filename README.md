@@ -21,13 +21,15 @@ The package contains:
 
 1. The ``dotcloud.yml`` required to push to Dotcloud declaring 2 services:
 
-    www:
-        type: php
-    db:
-        type: mysql
+        www:
+            type: php
+        db:
+            type: mysql
         
 2. The ``nginx.conf`` file telling Nginx to redirect everything to Wordpress front controller as Dotcloud does not support ``.htaccess`` files (included in Wordpress):
 
     try_files $uri $uri/ /index.php;
     
-3. The ``postinstall`` script that will be executed by Dotcloud after each push.
+3. The ``postinstall`` script that is a post-install hook and will be executed by Dotcloud after each push. It is calling the scripts in the ``dotcloud-scripts/`` directory.
+
+5. The ``persist-wp-content.sh`` (executed by the post-install hook) that will persist the ``wp-content/`` directory.
