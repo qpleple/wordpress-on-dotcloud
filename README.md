@@ -8,8 +8,9 @@ Copy all the files of this package in the root of your Wordpress directory and p
     mv wordpress-on-dotcloud/* .
     dotcloud create myblog
     dotcloud push myblog
+    dotcloud push myblog # dotcloud issue: database not ready at first push
 
-Due to a Dotcloud issue, you may have to push twice the first time : ``dotcloud push myblog``. Push local modifications to remote server with :
+Then, push local modifications to remote server with :
 
     dotcloud push myblog
     
