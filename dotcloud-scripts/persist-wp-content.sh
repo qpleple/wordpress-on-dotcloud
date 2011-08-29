@@ -10,9 +10,11 @@
 # Move wp-content directory to ~/data to make it persistent
 
 if [ -d ~/data/wp-content ]; then
-      rm -rf ~/current/wp-content
+    mv -n ~/current/wp-content/plugins/* ~/data/wp-content/plugins
+    mv -n ~/current/wp-content/themes/* ~/data/wp-content/themes
+    rm -rf ~/current/wp-content
 else
-      mkdir -p ~/data/wp-content
-      mv ~/current/wp-content ~/data
+    mkdir -p ~/data/wp-content
+    mv ~/current/wp-content ~/data
 fi
 ln -s ~/data/wp-content ~/current/wp-content
