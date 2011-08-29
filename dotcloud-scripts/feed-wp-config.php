@@ -85,7 +85,7 @@ foreach ($configValues as $property => $value) {
     $count = 0;
     $content = preg_replace('/(define\(\'' . $property . '\', \')(.*)(\'\);)/', '${1}' . $value . '${3}', $content, -1, &$count);
     if ($count == 0) {
-        die("Error: Property $property not found.\n");
+        die("Error: Property $property not found in wp-config.\n");
     }
 }
 
