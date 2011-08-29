@@ -102,7 +102,7 @@ echo "Modifications saved.\n";
 /**********************************
   Creating DB if not exists
  **********************************/
-echo "Creating database " . DB_NAME . "if not exists\n";
+echo "Creating database " . DB_NAME . " if not exists\n";
 $mysqli = new mysqli(
     $environment->DOTCLOUD_DB_MYSQL_HOST,
     $environment->DOTCLOUD_DB_MYSQL_LOGIN,
