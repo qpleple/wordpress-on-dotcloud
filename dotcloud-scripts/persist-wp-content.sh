@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This file is part of the Wordpress On Dotcloud package.
 # 
@@ -17,4 +17,5 @@ else
     mkdir -p ~/data/wp-content
     mv ~/current/wp-content ~/data
 fi
+
 ln -s ~/data/wp-content ~/current/wp-content

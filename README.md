@@ -35,9 +35,31 @@ The package contains:
 
         try_files $uri $uri/ /index.php;
     
-3. The ``postinstall`` script that is a post-install hook and will be executed by Dotcloud after each push. It is calling the scripts in the ``dotcloud-scripts/`` directory.
+3. The ``postinstall`` script that is a post-install hook and will be executed by Dotcloud after each push. It is calling the scripts in the ``dotcloud-scripts/`` directory:
+
+    #!/bin/bash
+    
+    # Reads environment.json and config MySQL values in wp-config.php
+    ./dotcloud-scripts/feed-wp-config.php
+    
+    # Move wp-content to make it persistent
+    ./dotcloud-scripts/persist-wp-content.sh
+
 
 4. The ``feed-wp-config.php`` script (executed by the post-install hook) that gets the parameters of the just created MySQL Dotcloud service, write them into the ``wp-config.php`` file and create the database if it does not exist. If ``wp-config.php`` does not exist, it will create it from ``wp-config-sample.php``.
+
+    #!/bin/bash
+    
+    if [ -d ~/data/wp-content ]; then
+        mv -n ~/current/wp-content/plugins/* ~/data/wp-content/plugins
+        mv -n ~/current/wp-content/themes/* ~/data/wp-content/themes
+        rm -rf ~/current/wp-content
+    else
+        mkdir -p ~/data/wp-content
+        mv ~/current/wp-content ~/data
+    fi
+
+ln -s ~/data/wp-content ~/current/wp-content
 
 5. The ``persist-wp-content.sh`` script (executed by the post-install hook) that persists the ``wp-content/`` directory containing uploads, installed plugins and themes. It moves the directory from ``~/code/wp-content`` it to ``~/data/wp-content`` and makes a symlink to it, because ``~/code`` will be overwritten at each push.
 
