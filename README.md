@@ -1,11 +1,15 @@
 Deploying Wordpress on Dotcloud
 ===============================
 
-Copy all the files of this package in the root of your Wordpress directory and push to Dotcloud:
+First, get a copy of all the files of this package in the root of your Wordpress directory:
 
     cd wordpress
     git clone https://github.com/qpleple/wordpress-on-dotcloud
     mv wordpress-on-dotcloud/* .
+    chmod +x postinstall
+    
+Then push to Dotcloud:
+
     dotcloud create myblog
     dotcloud push myblog
     dotcloud push myblog # dotcloud issue: database not ready at first push
