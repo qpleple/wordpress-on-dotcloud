@@ -15,7 +15,7 @@ define("WP_CONFIG_FILE_NAME", dirname(__FILE__) . '/../wp-config.php');
 define("WP_CONFIG_sample_FILE_NAME", dirname(__FILE__) . '/../wp-config-sample.php');
 // the name of the database that will be created for wordpress
 define("DB_NAME", "wordpress"); 
-define("MSG_PREFIX", "[wordpress-on-dotcloud]Â ");
+define("MSG_PREFIX", "[wordpress-on-dotcloud]  ");
 /**********************************
   Reading environment variables
  **********************************/
