@@ -15,7 +15,7 @@ define("WP_CONFIG_FILE_NAME", dirname(__FILE__) . '/../wp-config.php');
 define("WP_CONFIG_sample_FILE_NAME", dirname(__FILE__) . '/../wp-config-sample.php');
 // the name of the database that will be created for wordpress
 define("DB_NAME", "wordpress"); 
-define("MSG_PREFIX", "[wordpress-on-dotcloud]  ");
+define("MSG_PREFIX", "[wordpress-on-dotcloud] ï¿½");
 /**********************************
   Reading environment variables
  **********************************/
@@ -83,7 +83,7 @@ $configValues = array(
 foreach ($configValues as $property => $value) {
     echo MSG_PREFIX . "Setting $property = $value\n";
     $count = 0;
-    $content = preg_replace('/(define\(\'' . $property . '\', \')(.*)(\'\);)/', '${1}' . $value . '${3}', $content, -1, &$count);
+    $content = preg_replace('/(define\(\'' . $property . '\', \')(.*)(\'\);)/', '${1}' . $value . '${3}', $content, -1, $count);
     if ($count == 0) {
         die(MSG_PREFIX . "Error: Property $property not found in wp-config.\n");
     }
